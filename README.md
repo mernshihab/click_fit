@@ -6,7 +6,7 @@ This is a one-page responsive fitness-themed website with animation, image uploa
 
 ## 🔧 How to Run the Project
 
-### 📁 Backend Setup
+## 📁 Backend Setup
 
 1. Open your terminal and go to the backend folder:
 
@@ -18,7 +18,7 @@ cd clickFit/backend
 ```npm run dev
 
 
-### 🖼 Image Upload Test
+## 🖼 Image Upload Test
 After the backend is running:
 1. Open the index.html file located in the root folder:
 clickFit/index.html
@@ -29,6 +29,6 @@ You’ll find an image upload section with drag & drop or file click.
 ```clickFit/backend/upload_images/
 
 
-### 🛢 MySQL Task
+## 🛢 MySQL Task
 You will find the SQL file here:
 ```clickFit/backend/db/users.sql
