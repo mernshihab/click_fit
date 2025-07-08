@@ -1,4 +1,4 @@
-# Click Fit — One Page Fitness Website (Task Project)
+# Click Fit — One Page Fitness Website
 
 This is a one-page responsive fitness-themed website with animation, image upload functionality using Node.js backend, and a MySQL script with stored procedure — built as a technical test project.
 
