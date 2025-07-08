@@ -260,38 +260,10 @@ a {
   color: #333;
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes UpDown {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.explore__slider-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  margin-top: 4rem;
 }
 
 .explore__header {
@@ -323,18 +295,30 @@ a {
 }
 
 .explore__grid {
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 2rem;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.explore__grid::-webkit-scrollbar {
+  display: none;
 }
 
 .explore__card {
   padding: 1rem;
+  flex: 0 0 270px;
   background-color: var(--primary-color-light);
   border: 2px solid transparent;
   border-radius: 10px;
-  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-out;
+}
+
+.explore__card.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .explore__card:hover {
@@ -389,6 +373,12 @@ a {
   top: 0;
   max-width: 500px;
   border-radius: 10px;
+  opacity: 0;
+}
+
+.class__image .class__img-1.animate {
+  animation: slideInLeft 1s ease forwards;
+  opacity: 1;
 }
 
 .class__image .class__img-2 {
@@ -397,10 +387,22 @@ a {
   bottom: 0;
   max-width: 300px;
   border-radius: 10px;
+  opacity: 0;
+}
+
+.class__image .class__img-2.animate {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 1;
 }
 
 .class__content {
   padding: 2rem 0;
+  opacity: 0;
+}
+
+.class__content.animate {
+  animation: slideInRight 1s ease forwards;
+  opacity: 1;
 }
 
 .class__content .section__header {
@@ -502,7 +504,6 @@ a {
   color: #cccccc;
   font-size: 0.95rem;
 }
-
 
 .price__grid {
   margin-top: 4rem;
@@ -641,6 +642,26 @@ a {
   cursor: pointer;
 }
 
+.review__slider .review__item {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.review__slider .review__item.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .footer__container {
   position: relative;
   display: grid;
@@ -774,5 +795,50 @@ a {
 
   .footer__container {
     grid-template-columns: 1fr 150px;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes UpDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
