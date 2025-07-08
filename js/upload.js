@@ -51,7 +51,11 @@ $(document).ready(function () {
       contentType: false,
       processData: false,
       success: function (res) {
-        alert("Image uploaded successfully!");
+        if(res.success) {
+          alert(res.message);
+        }else {
+          alert("Upload failed: " + res.message);
+        }
       },
       error: function () {
         alert("Upload failed. Try again.");
